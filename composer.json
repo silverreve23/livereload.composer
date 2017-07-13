@@ -1,0 +1,20 @@
+{
+    "name": "sbk/livereload",
+    "description": "LiveReload Package",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Sviatoslav Sabadosh",
+            "email": "silverreve23@gmail.com"
+        }
+    ],
+    "minimum-stability": "beta",
+    "require": {
+
+    },
+    "autoload": {
+        "psr-0" : {
+            "LiveReloadPHP" : "src"
+        }
+    }
+}
