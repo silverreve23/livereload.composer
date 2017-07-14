@@ -17,6 +17,22 @@
 
 	};
 
+	window.addEventListener('beforeunload', function(window){
+
+	    return function(){
+
+	        console.log("close connection LiveReload!");
+
+	        if(websocket.readyState === WebSocket.OPEN){
+
+		    	websocket.close();
+
+		    }
+	        
+	    }
+
+	}(window));
+
 </script>
 
 
