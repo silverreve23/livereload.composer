@@ -4,7 +4,7 @@ namespace LiveReloadPHP;
 
 class LiveReload{
 	
-	function initReload(){
+	public static function initReload(){
 
 		require __DIR__.'/JS/Client.php';
 		
