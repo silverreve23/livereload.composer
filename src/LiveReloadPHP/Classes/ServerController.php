@@ -35,10 +35,10 @@ class ServerController{
 			$files = scandir(getcwd().$folder);
 
 			foreach($files as $file){
-				
-				if(@self::$filesTimes[$file] != stat(getcwd().'/'.$file)['mtime']){
 
-					self::$filesTimes[$file] = stat(getcwd().'/'.$file)['mtime'];
+				if(@self::$filesTimes[$file] != stat(getcwd().$folder.$file)['mtime']){
+
+					self::$filesTimes[$file] = stat(getcwd().$folder.$file)['mtime'];
 
 					$buf = "@changed";
 
@@ -153,4 +153,3 @@ class ServerController{
 	}
 
 }
-

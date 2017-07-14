@@ -2,6 +2,7 @@
     "name": "sbkinfo/livereload",
     "description": "LiveReload Package",
     "type": "library",
+    "license": "sbkinfo",
     "authors": [
         {
             "name": "Sviatoslav Sabadosh",

@@ -1,15 +1,17 @@
 
-<script language="javascript" type="text/javascript">  
+<script language="javascript" type="text/javascript">
 
-	var wsUri = "ws://localhost:9060"; 	
-	websocket = new WebSocket(wsUri); 
-	
+	var host = "<?php echo @$config['host'] ?>";
+	var port = "<?php echo @$config['port'] ?>";
+	var wsUri = "ws://" + host + ":" + port;
+	websocket = new WebSocket(wsUri);
+
 	websocket.onopen = function(ev){
 
 		console.log('Open connection LiveReload!');
 
 	}
-	
+
 	websocket.onmessage = function(ev) {
 
 		if(ev.data == "@changed")
@@ -28,12 +30,9 @@
 		    	websocket.close();
 
 		    }
-	        
+
 	    }
 
 	}(window));
 
 </script>
-
-
-
