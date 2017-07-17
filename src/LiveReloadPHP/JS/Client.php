@@ -4,6 +4,7 @@
 	var host = "<?php echo @$config['host'] ?>";
 	var port = "<?php echo @$config['port'] ?>";
 	var wsUri = "ws://" + host + ":" + port;
+
 	websocket = new WebSocket(wsUri);
 
 	websocket.onopen = function(ev){
@@ -25,11 +26,7 @@
 
 	        console.log("close connection LiveReload!");
 
-	        if(websocket.readyState === WebSocket.OPEN){
-
-		    	websocket.close();
-
-		    }
+		    websocket.close();
 
 	    }
 

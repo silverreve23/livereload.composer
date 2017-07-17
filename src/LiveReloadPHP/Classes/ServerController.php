@@ -30,9 +30,15 @@ class ServerController{
 
 	public function isChanged($socketAccept, $folders){
 
+		$isChanged = false;
+		$buf = "@changed";
+
 		foreach($folders as $folder){
 
 			$files = scandir(getcwd().$folder);
+
+			unset($files[0]);
+			unset($files[1]);
 
 			foreach($files as $file){
 
@@ -40,19 +46,20 @@ class ServerController{
 
 					self::$filesTimes[$file] = stat(getcwd().$folder.$file)['mtime'];
 
-					$buf = "@changed";
-
-					socket_write(
-						$socketAccept,
-						$this->mask($buf),
-						strlen($this->mask($buf))
-					);
+					$isChanged = true;
 
 				}
 
 			}
 
 		}
+
+		if($isChanged === true)
+			socket_write(
+				$socketAccept,
+				$this->mask($buf),
+				strlen($this->mask($buf))
+			);
 
 	}
 
