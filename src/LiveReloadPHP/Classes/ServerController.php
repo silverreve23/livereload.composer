@@ -42,9 +42,9 @@ class ServerController{
 
 			foreach($files as $file){
 
-				if(@self::$filesTimes[$file] != stat(getcwd().$folder.$file)['mtime']){
+				if(@self::$filesTimes[$folder][$file] != stat(getcwd().$folder.$file)['mtime']){
 
-					self::$filesTimes[$file] = stat(getcwd().$folder.$file)['mtime'];
+					self::$filesTimes[$folder][$file] = stat(getcwd().$folder.$file)['mtime'];
 
 					$isChanged = true;
 
