@@ -55,7 +55,7 @@ class ServerController{
 		}
 
 		if($isChanged === true)
-			socket_write(
+			@socket_write(
 				$socketAccept,
 				$this->mask($buf),
 				strlen($this->mask($buf))
