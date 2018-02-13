@@ -2,7 +2,7 @@
     "name": "sbkinfo/livereload",
     "description": "LiveReload Package",
     "type": "library",
-    "license": "sbkinfo",
+    "license": "GPL-3.0-only",
     "authors": [
         {
             "name": "Sviatoslav Sabadosh",
