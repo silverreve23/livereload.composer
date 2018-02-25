@@ -12,16 +12,15 @@
 
 ## How to install
 
-This is code help instaled and configure livereload for files
-
-First step require package live reload:
+Execute next command in terminal:
 
     composer require sbkinfo/livereload
 
 
 ## Initialization Live
 
-Run method <b>LiveReload::initReload()</b> on index page.
+Run method <b>LiveReload::initReload()</b> 
+in your project main file.
 
 ```php
 
@@ -31,7 +30,7 @@ LiveReload::initReload();
 
 ```
 
-Last step create file <b>server.php</b>:
+Create file <b>server.php</b>:
 
 ```php
 
@@ -40,7 +39,7 @@ use LiveReloadPHP\Server;
 $config = array(
 	'host' => 'localhost',
 	'port' => '9060',
-	'sleep' => '1',
+	'sleep' => '1', #seconds
 	'folders' => array(
 		'/test',
 		'/recursive',
@@ -53,6 +52,6 @@ Server::runServer($config);
 
 ## How to run server
 
-Execute next command in terminal or apache server:
+Execute next command in terminal:
 
     php server.php
