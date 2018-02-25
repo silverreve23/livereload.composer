@@ -27,6 +27,31 @@ class ServerController{
 		}
 
 	}
+    
+    public function getDirContents($dir, &$results = array()){
+    
+        $files = scandir($dir);
+
+        foreach($files as $key => $value){
+            
+            $path = realpath($dir.DIRECTORY_SEPARATOR.$value);
+            
+            if(!is_dir($path)){
+                
+                $results[] = $path;
+                
+            }elseif($value != "." && $value != ".."){
+                
+                $this->getDirContents($path, $results);
+                $results[] = $path;
+                
+            }
+            
+        }
+
+        return $results;
+        
+    }
 
 	public function isChanged($socketAccept, $folders){
 
@@ -34,19 +59,18 @@ class ServerController{
 		$buf = "@changed";
 
 		foreach($folders as $folder){
-
-			$files = scandir(getcwd().$folder);
-
-			unset($files[0]);
-			unset($files[1]);
-
+            
+			$files = $this->getDirContents(getcwd().$folder);
+            
 			foreach($files as $file){
 
-				if(@self::$filesTimes[$folder][$file] != stat(getcwd().$folder.$file)['mtime']){
+				if(@self::$filesTimes[$file] != stat($file)['mtime']){
 
-					self::$filesTimes[$folder][$file] = stat(getcwd().$folder.$file)['mtime'];
+					self::$filesTimes[$file] = stat($file)['mtime'];
 
 					$isChanged = true;
+
+					echo "\e[36m File: $file is changed...\n";
 
 				}
 
@@ -62,6 +86,7 @@ class ServerController{
 			);
 
 	}
+    
 
 	protected function secketCreate(&$socket, $conf){
 
@@ -101,8 +126,7 @@ class ServerController{
 
 	}
 
-
-	function performHandshaking($recevedHeader, $socket, $conf){
+	public function performHandshaking($recevedHeader, $socket, $conf){
 
 		$headers = array();
 		$lines = preg_split("/\r\n/", $recevedHeader);
@@ -124,7 +148,7 @@ class ServerController{
 			true
 		));
 
-		$upgrade  =
+		$upgrade =
 			"HTTP/1.1 101 Web Socket Protocol\r\n" .
 			"Upgrade: websocket\r\n" .
 			"Connection: Upgrade\r\n" .

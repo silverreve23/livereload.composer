@@ -1,9 +1,17 @@
 
 <script language="javascript" type="text/javascript">
-
+	
+	var wsUri = null;
 	var host = "<?php echo @$config['host'] ?>";
 	var port = "<?php echo @$config['port'] ?>";
-	var wsUri = "ws://" + host + ":" + port;
+	var protocoleHttp = window.location.protocol;
+	var protocoleWs = "ws://";
+	
+	if(protocoleHttp.indexOf('https') + 1)
+		protocoleWs = "wss://";
+		
+	wsUri = protocoleWs + host + ":" + port;
+	
 
 	websocket = new WebSocket(wsUri);
 
