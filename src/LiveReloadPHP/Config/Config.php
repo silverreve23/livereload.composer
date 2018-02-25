@@ -5,6 +5,6 @@ return array(
 	'port' => '9065',
 	'sleep' => '1',
 	'folders' => array(
-		'/app/Http/Controllers/Client/'
+		'/'
 	)
 );
