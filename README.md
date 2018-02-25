@@ -32,6 +32,8 @@ Create file <b>server.php</b>:
 
 ```php
 
+<?php
+
 use LiveReloadPHP\Server;
 
 $config = array(
