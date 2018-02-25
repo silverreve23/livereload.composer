@@ -22,6 +22,8 @@ in your project main file.
 
 ```php
 
+<?php 
+
 use LiveReloadPHP\LiveReload;
 
 LiveReload::initReload();
@@ -36,7 +38,26 @@ Create file <b>server.php</b>:
 
 use LiveReloadPHP\Server;
 
-$config = array(
+Server::runServer();
+
+```
+
+## How to run server
+
+Execute next command in terminal:
+
+    php server.php
+    
+## Configuration 
+
+Default path wather / (root project).
+For change default config, create <b>config.php</b>
+
+```php
+
+<?php 
+
+return array(
 	'host' => 'localhost',
 	'port' => '9060',
 	'sleep' => '1', #seconds
@@ -46,12 +67,13 @@ $config = array(
 	)
 );
 
-Server::runServer($config);
-
 ```
 
-## How to run server
+Include <b>config.php</b> and pass to methods:
 
-Execute next command in terminal:
+* LiveReload::initReload($config)
+* Server::runServer($config)
 
-    php server.php
+
+
+
