@@ -8,8 +8,6 @@
     Livereload package for php.
 </p>
 
-
-
 ## How to install
 
 Execute next command in terminal:
