@@ -27,8 +27,6 @@ in your project main file.
 
 ```php
 
-<?php 
-
 use LiveReloadPHP\LiveReload;
 
 LiveReload::initReload();
@@ -44,13 +42,11 @@ Execute next command in terminal from root folder your project:
 ## Configuration 
 
 Default path wather / (root project).
-For change default config, create <b>config.php</b>
+Example config:
 
 ```php
 
-<?php 
-
-return array(
+$config = array(
 	'host' => 'localhost',
 	'port' => '9060',
 	'sleep' => '1', #seconds
@@ -62,7 +58,7 @@ return array(
 
 ```
 
-Include <b>config.php</b> and pass to methods:
+Pass config to methods:
 
 * LiveReload::initReload($config) # in main file 
 * Server::runServer($config) # in livestart file
