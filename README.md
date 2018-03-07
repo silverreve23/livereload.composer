@@ -30,23 +30,15 @@ LiveReload::initReload();
 
 ```
 
-Create file <b>server.php</b>:
+Run this command in terminal from root folder your project:
 
-```php
-
-<?php
-
-use LiveReloadPHP\Server;
-
-Server::runServer();
-
-```
+    wget https://github.com/silverreve23/livereload/blob/master/livestart
 
 ## How to run server
 
-Execute next command in terminal:
+Execute next command in terminal from root folder your project:
 
-    php server.php
+    livestart
     
 ## Configuration 
 
@@ -71,8 +63,8 @@ return array(
 
 Include <b>config.php</b> and pass to methods:
 
-* LiveReload::initReload($config)
-* Server::runServer($config)
+* LiveReload::initReload($config) # in main file 
+* Server::runServer($config) # in livestart file
 
 
 
