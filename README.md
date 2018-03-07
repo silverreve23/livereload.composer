@@ -22,7 +22,7 @@ Run this command in terminal from root folder your project:
 ## Initialization Live
 
 Include method:
-## LiveReload::initReload()
+#### LiveReload::initReload()
 in your project main file.
 
 ```php
