@@ -1,0 +1,9 @@
+# !/usr/bin/php
+
+<?php
+
+include 'vendor/autoload.php';
+
+use LiveReloadPHP\Server;
+
+Server::runServer();
