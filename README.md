@@ -21,9 +21,7 @@ Run this command in terminal from root folder your project:
 
 ## Initialization Live
 
-Include method:
-#### LiveReload::initReload()
-in your project main file.
+Insert next code in your project main file.
 
 ```php
 
