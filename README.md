@@ -10,14 +10,19 @@
 
 ## How to install
 
-Execute next command in terminal:
+Run this command in terminal from root folder your project:
 
     composer require sbkinfo/livereload
 
 
+Run this command in terminal from root folder your project:
+
+    wget https://github.com/silverreve23/livereload/blob/master/livestart
+
 ## Initialization Live
 
-Run method <b>LiveReload::initReload()</b> 
+Include method:
+## LiveReload::initReload()
 in your project main file.
 
 ```php
@@ -29,10 +34,6 @@ use LiveReloadPHP\LiveReload;
 LiveReload::initReload();
 
 ```
-
-Run this command in terminal from root folder your project:
-
-    wget https://github.com/silverreve23/livereload/blob/master/livestart
 
 ## How to run server
 
