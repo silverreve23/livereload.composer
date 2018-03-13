@@ -39,7 +39,7 @@ Execute next command in terminal from root folder your project:
     
 ## Configuration 
 
-Default path wather / (root project).
+Default path watcher / (root project).
 Example config:
 
 ```php
