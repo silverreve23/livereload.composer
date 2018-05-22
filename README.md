@@ -17,7 +17,7 @@ Run this command in terminal from root folder your project:
 
 Run this command in terminal from root folder your project:
 
-    wget https://github.com/silverreve23/livereload/blob/master/livestart
+    wget https://raw.githubusercontent.com/silverreve23/livereload/master/livestart
 
 ## Initialization Live
 
